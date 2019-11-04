@@ -1,12 +1,9 @@
 import axios from "axios";
-
-export function getToken() {
-  return window.localStorage.getItem("token");
-}
+import getToken from './getToken'
 
 export default function() {
   return axios.create({
-    baseURL: "http://localhost5000",
+    baseURL: "http://localhost:5000/api",
     headers: {
       Authorization: getToken()
     }
