@@ -23,7 +23,7 @@ export default function SignIn(props) {
         window.localStorage.setItem("token", res.data.payload);
         props.history.push("/friendslist");
       })
-      .catch();
+      .catch(err => console.log(err));
   };
   return (
     <div>

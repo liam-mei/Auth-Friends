@@ -11,7 +11,7 @@ export default function Navbar() {
         {token && <Link to="/">Home</Link>}
         {!token && <Link to="/signin">Sign In</Link>}
         {token && <Link to="/addfriend">Add Friend</Link>}
-        {token && <Link to="/updatefriend">Update Friend</Link>}
+        {/* {token && <Link to="/updatefriend">Update Friend</Link>} */}
         {token && <Link to="/friendslist">Friends List</Link>}
         {token && <Link to="/signout">Sign Out</Link>}
       </nav>

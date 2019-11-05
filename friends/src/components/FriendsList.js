@@ -1,27 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import Friend from "./Friend";
-import axiosCreator from "../utils/axiosCreator";
+// import axiosCreator from "../utils/axiosCreator";
 
-export default function FriendList() {
-  const [friendsList, setFriendsList] = React.useState([]);
+export default function FriendList(props) {
 
-  React.useEffect(() => {
-    axiosCreator()
-      .get("/friends")
-      .then(res => {
-        setFriendsList(res.data);
-      })
-      .catch(error => {
-        console.log(error.response.data);
-      });
-  }, []);
+  console.log("list props", props)
   return (
     <div>
       FriendList
-      {friendsList.map(friend => (
-        <div className="purple">
-          <Link to={`/friend/${friend.id}`}>
+      {props.friendsList.map(friend => (
+        <div className="purple" key={friend.id}>
+          <Link to={`/friends/${friend.id}`}>
             Friend
             <div>{friend.id}</div>
             <div>{friend.name}</div>
